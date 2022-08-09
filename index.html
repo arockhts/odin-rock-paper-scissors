@@ -24,22 +24,32 @@
 
 //Step 5: Write a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 
-let initiate = window.prompt('Let\'s play Rock Paper Scissors. Enter your selection here:');
+//let initiate = window.prompt('Let\'s play Rock Paper Scissors. Enter your selection here:');
 
-if (initiate.toLowerCase() === 'rock'){
-    alert ('It\'s working!!! You\'re a genius!');
-}   
-    else if (initiate.toLowerCase() === 'paper'){
-        alert ('Good job, paper!');
+//if (initiate.toLowerCase() === 'rock'){
+//    alert ('It\'s working!!! You\'re a genius!');
+//}   
+//    else if (initiate.toLowerCase() === 'paper'){
+//        alert ('Good job, paper!');
+//}
+
+//    else if (initiate.toLowerCase() === 'scissors'){
+//    alert ('SCISSORS!!!!');
+//}
+
+//    else {
+//    alert ('Check your spelling and try again');
+//}
+
+
+//var randomSelection = selections[Math.floor(Math.random()*selections.length)];
+const selections = ['Rock', 'Paper', 'Scissors'];
+
+
+function getComputerChoice(){
+  return selections[Math.floor(Math.random()*selections.length)];
 }
 
-    else if (initiate.toLowerCase() === 'scissors'){
-    alert ('SCISSORS!!!!');
-}
-
-    else {
-    alert ('Check your spelling and try again');
-}
 
 
 
