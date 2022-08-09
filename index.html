@@ -41,14 +41,35 @@
 //    alert ('Check your spelling and try again');
 //}
 
+let initiate = window.prompt('Let\'s play Rock Paper Scissors. Enter your selection here:');
 
-//var randomSelection = selections[Math.floor(Math.random()*selections.length)];
-const selections = ['Rock', 'Paper', 'Scissors'];
+var playerSelection = 'unselected';
 
+if (initiate.toLowerCase() === 'rock'){
+    playerSelection = 'Rock';
+}  else if (initiate.toLowerCase() === 'paper'){
+      playerSelection = 'Paper'; 
+}   else if (initiate.toLowerCase() === 'scissors'){
+      playerSelection = 'Scissors';
+}   else {
+      alert ('Check your spelling and try again');
+    }
+
+const computerSelection = ['Rock', 'Paper', 'Scissors'];
 
 function getComputerChoice(){
-  return selections[Math.floor(Math.random()*selections.length)];
+  return computerSelection[Math.floor(Math.random()*computerSelection.length)];
 }
+
+
+
+
+
+
+function playRound(playerSelection, computerSelection){
+
+}
+
 
 
 
