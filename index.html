@@ -3,43 +3,27 @@
     <head lang="en-us">
         <meta charset="utf-8">
     </head>
-    <script>
+    <script src = 'script.js'>
 
-//HOW TO MAKE ROCK PAPER SCISSORS//
+/*HOW TO MAKE ROCK PAPER SCISSORS
 
-//Upon game initiation, user enters either "rock", "paper", or "scissors". From there, the computer randomly selects "rock", "paper", or "scissors". There should be a way for the code to know which selections beat other selections. From there, the game will determine the winner. The game should last five rounds, and the player with the 3 or more wins will win the game. The console should output if you win or lose based on how many wins you earned.//
+Upon game initiation, user enters either "rock", "paper", or "scissors". From there, the computer randomly selects "rock", "paper", or "scissors". There should be a way for the code to know which selections beat other selections. From there, the game will determine the winner. The game should last five rounds, and the player with the 3 or more wins will win the game. The console should output if you win or lose based on how many wins you earned.
 
-//---------------------------------------------------------------------------------------
-//---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
 
-//Step 1: Create a function called getComputerChoice that randomly returns either 'Rock', 'Paper', or 'Scissors'.
+Step 1: Create a function called getComputerChoice that randomly returns either 'Rock', 'Paper', or 'Scissors'.
 
-//Step 2: Create constants for 'Rock', 'Paper', or 'Scissors'.
+Step 2: Create constants for 'Rock', 'Paper', or 'Scissors'.
 
-//Step 3: Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection. This should return a string that declares the winner of the round like so: "You Lose! Paper beats Rock".
+Step 3: Write a function that plays a single round of Rock Paper Scissors. The function should take two parameters - the playerSelection and computerSelection. This should return a string that declares the winner of the round like so: "You Lose! Paper beats Rock".
 
-////
+Step 4: Ensure that playerSelction function accepts any capitalization of the words. For example 'Rock', 'rock', 'rocK'
 
-//Step 4: Ensure that playerSelction function accepts any capitalization of the words. For example 'Rock', 'rock', 'rocK'
+Step 5: Write a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
 
-//Step 5: Write a new function called game(). Call the playRound function inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end.
-
-//let initiate = window.prompt('Let\'s play Rock Paper Scissors. Enter your selection here:');
-
-//if (initiate.toLowerCase() === 'rock'){
-//    alert ('It\'s working!!! You\'re a genius!');
-//}   
-//    else if (initiate.toLowerCase() === 'paper'){
-//        alert ('Good job, paper!');
-//}
-
-//    else if (initiate.toLowerCase() === 'scissors'){
-//    alert ('SCISSORS!!!!');
-//}
-
-//    else {
-//    alert ('Check your spelling and try again');
-//}
+-----------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------
 
 let initiate = window.prompt('Let\'s play Rock Paper Scissors. Enter your selection here:');
 
@@ -53,7 +37,6 @@ if (initiate.toLowerCase() === 'rock'){
       alert ('Check your spelling and try again');
     }
 
-var computerSelection = 'BLANK';
 
 var choices = [
   'Rock',
@@ -67,80 +50,84 @@ function getComputerChoice(){
 
 getComputerChoice();
 
-const win = 'you win!';
-const lose = 'you lose!';
-const tie = 'Tie game.';
+const win = 'You win! ';
+const lose = 'You lose! ';
+const tie = '. Tie game.';
 
 function playRound(playerSelection, computerSelection){
   if (playerSelection === 'Rock' && computerSelection === 'Scissors'){
-      console.log('Rock beats scissors, ' + win);
+      console.log(win + 'Rock beats scissors.');
         return;
   } else if (playerSelection === 'Rock' && computerSelection === 'Paper'){
-      console.log('Paper beats rock, ' + lose);
+      console.log(lose + 'Paper beats rock.');
         return; 
   } else if (playerSelection === 'Paper' && computerSelection === 'Rock'){
-      console.log('Paper beats rock, ' + win);
-        return ;
+      console.log(win + 'Paper beats rock.');
+        return;
   } else if (playerSelection === 'Paper'&& computerSelection === 'Scissors'){
-      console.log('Scissors beats paper, ' + lose);
-        return ;
+      console.log(lose + 'Scissors beats paper.');
+        return;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Paper'){
-      console.log('Scissors beats paper, ' + win);
+      console.log(win + 'Scissors beats paper.');
         return;
   } else if (playerSelection === 'Scissors' && computerSelection === 'Rock'){
-      console.log('Rock beats scissors ' + lose);
+      console.log(lose + 'Rock beats scissors.');
         return;
   } else {
-    console.log(tie);
-    return;
+      console.log('Both players chose ' + playerSelection + tie)
+        return;
   }
+}
+
+function game(){
+  const winner = 'Player wins.';
+  const loser = 'Computer wins.';
+  const tieGame = 'It\'s a tie.'
+  let playerScore = 0;
+  let computerScore = 0;
+  for (let i = 0; i < 5; i++);
+    const result = playRound(playerSelection, computerSelection);
+    switch (result) {
+      case 'winner':
+        console.log(winner);
+        playerScore++;
+        break;
+      case 'loser':
+        console.log(loser);
+        computerScore++;
+        break;
+      default:
+        console.log(tieGame);
+        playerScore++;
+        computerScore++;
+        break;
+  }
+}
+
+getComputerChoice();
+
+/*console.log("Final Results: Player: " + playerScore + " Computer: " + computerScore);
+  if (playerScore > computerSelection){
+    console.log("You win the game, congratulations!");
+  } else if (playerScore < computerScore){
+    console.log("You lose, better luck next time!");
+  } else {
+    console.log("The game was an overall tie.");
+  }
+
+//playRound(playerSelection, computerSelection);
+
+game();
+*/
+
+function getComputerChoice(){
+
 }
 
 
 
-/*for (var i = 0; i < 5; i ++){
-  game();
-} 
-
-game();
 
 
-
-
-
-/*
-function playRound(playerSelection, computerSelection){
-  if (playerSelection === 'Rock', computerSelection === 'Scissors') {
-    console.log(win);
-  } else if (playerSelection === 'Rock', computerSelection === 'Paper') {
-    console.log(lose);
-  } else if (playerSelection === 'Paper', computerSelection === 'Rock') {
-    console.log(win);
-  } else if (playerSelection === 'Paper', computerSelection === 'Scissors') {
-   console.log(lose);
-  } else if (playerSelection === 'Scissors', computerSelection === 'Paper') {
-    console.log(win);
-  } else if (playerSelection === 'Scissors', computerSelection === 'Rock') {
-    console.log(lose);
-  //} else (playerSelection === computerSelection) 
-   // console.log(tie);
-  }
-} 
-*/
-//playRound(playerSelection, computerSelection);
-
-//} else if (playerSelection === 'Paper', computerSelection === 'Rock') {
-//    console.log('You win');
-//  } else if (playerSelection === 'Paper', computerSelection === 'Scissors') {
-//   console.log('You lose');
-//  } else if (playerSelection === 'Scissors', computerSelection === 'Paper') {
-//    console.log('You win');
-// } else if (playerSelection === 'Scissors', computerSelection === 'Rock') {
-//    console.log('You lose');
-//  } 
-//}
-
-playRound(playerSelection, computerSelection);
 
 
 
